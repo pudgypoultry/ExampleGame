@@ -6,7 +6,7 @@ public class PointsAndLives : MonoBehaviour
 {
     public TMPro.TMP_Text points;
     public TMPro.TMP_Text lives;
-    public MyPlayerController4 player;
+    public MyPlayerController5 player;
 
     // Start is called before the first frame update
     void Start()

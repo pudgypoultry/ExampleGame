@@ -866,13 +866,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1662005295}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bb106b426d18d5438d2bc04575c1d20, type: 3}
+  m_Script: {fileID: 11500000, guid: b76702b399b62b84a9c2106b2491e834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
   baseLives: 3
   currentLives: 0
-  baseMovementSpeed: 0.01
+  timesJumped: 0
+  baseMovementSpeed: 0.05
   movementSpeed: 0
   baseRotationSpeed: 0.5
   rotationSpeed: 0
@@ -919,7 +920,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points: {fileID: 1112849292}
   lives: {fileID: 405321875}
-  player: {fileID: 1662005302}
+  player: {fileID: 0}
 --- !u!114 &1714362999
 MonoBehaviour:
   m_ObjectHideFlags: 0

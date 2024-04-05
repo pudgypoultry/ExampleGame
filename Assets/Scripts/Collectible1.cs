@@ -6,7 +6,7 @@ public class Collectible1 : MonoBehaviour
 {
     public int pointValue = 10;
 
-    public virtual void CollectMe(MyPlayerController4 thePlayer)
+    public virtual void CollectMe(MyPlayerController5 thePlayer)
     {
         thePlayer.score += pointValue;
         Object.Destroy(this.gameObject);

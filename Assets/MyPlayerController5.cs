@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MyPlayerController4 : MonoBehaviour
+public class MyPlayerController5 : MonoBehaviour
 {
 
     // We need to add some global variables for this entity
@@ -10,6 +10,8 @@ public class MyPlayerController4 : MonoBehaviour
     public int score = 0;
     public int baseLives = 3;
     public int currentLives;
+    public int timesJumped = 0;
+
     [SerializeField] private float baseMovementSpeed = 0.05f;
     public float movementSpeed;
     [SerializeField] private float baseRotationSpeed = 0.5f;
@@ -121,8 +123,17 @@ public class MyPlayerController4 : MonoBehaviour
         // On the frame space is pressed, apply this force to the player
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
+            Debug.Log("Attempting to jump!!");
+            if (timesJumped == 0 || timesJumped == 1)
+            {
+                rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
+                Debug.Log("\tJumped!");
+                Debug.Log("\t\tTimes Jumped: " + timesJumped.ToString());
+                timesJumped++;
+            }
         }
+
+
     }
 
     // This will work to stand in for "Collect", we'll use the built in "OnCollisionEnter(Collision collision)"
@@ -132,7 +143,12 @@ public class MyPlayerController4 : MonoBehaviour
         Debug.Log("Found a collision: " + collision.gameObject.name);
         if (collision.gameObject.GetComponent<Collectible1>() != null)
         {
-            // collision.gameObject.GetComponent<Collectible1>().CollectMe(this);
+            collision.gameObject.GetComponent<Collectible1>().CollectMe(this);
+        }
+
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            timesJumped = 0;
         }
     }
 
@@ -149,4 +165,3 @@ public class MyPlayerController4 : MonoBehaviour
 
 
 }
-
