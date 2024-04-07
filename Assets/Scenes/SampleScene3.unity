@@ -920,7 +920,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points: {fileID: 1112849292}
   lives: {fileID: 405321875}
-  player: {fileID: 0}
+  player: {fileID: 1662005302}
 --- !u!114 &1714362999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1086,7 +1086,7 @@ GameObject:
   - component: {fileID: 1938059752}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
